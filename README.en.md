@@ -1,331 +1,242 @@
-# eframe-java-backend
+# EFRAME — Enterprise Full-Stack Framework (linlan-eframe)
+
+[简体中文](./README.md) | English
+
+> **TL;DR** · An enterprise back-end framework on Java 17 + Spring Boot with a Vue3 management front end: organizations, administrators, roles, permissions, groups, messages, code generation and scheduled jobs.
+> **Keywords**: EFRAME, Spring Boot, Java 17, MyBatis, Druid, Quartz, Vue3, Element Plus, Maven
+> **AI entry**: [llms.txt](./llms.txt) · [AGENTS.md](./AGENTS.md)
 
 [![License](https://img.shields.io/badge/license-Apache%202-green.svg)](https://www.apache.org/licenses/LICENSE-2.0)
 ![java version](https://img.shields.io/badge/JAVA-17-green.svg)
-![gitee star](https://gitee.com/linlannet/linlan-eframe/badge/star.svg)
-
-## Introduce
-
-The enterprise-level back-end framework (EFRAME) developed by JAVA is based on Springboot, and adopts the framework and security supporting the highest version of JAVA 1.8. The back-end data access adopts Mybatis framework, which supports a set of code adaptation of various databases, and provides scaffolding to quickly generate Mapper, etc. 
-Learn from the framework, realize the most basic administrator, organization, role, authority, grouping, message management, and provide framework support application extension for various enterprise applications.
-
-**common tools：** <a target="_blank">https://gitee.com/linlannet/java-tools-parent
-
-**code generate：** <a target="_blank">https://gitee.com/linlannet/java-tools-generate
-
-**smart doc plugin：** <a target="_blank">https://gitee.com/linlannet/java-plugin-doc-generate
-
-
-Front-end engineering path:
-
-**VUE+TS：** <a target="_blank">https://gitee.com/linlannet/linlan-eframe/tree/master/eframe-java-backend
-
-
-## Change Log
-
-[CHANGELOG](./CHANGELOG.md)
-
-
-## Application effect
-
-**Guide to the use of EFRAME ：** <a target="_blank">https://gitee.com/linlannet/linlan-eframe/tree/master/eframe-docs
-
-## Sub Package
-1. eframe-support: frame support module, various tools and data toolkits. 
-2. eframe-model: model data module, service and dao resource toolkit for database reading. 
-3. eframe-core: Core common module, universal business logic core tool.
-4. eframe-view: view logical data module, which uses read-write separation to logically split some services.
-5. eframe-api: API interface gateway module, a common API resource package at the framework layer.
-6. module-generator: generator code generation module, which supports simple control and read-write separation control and integrates service gateway.
-7. module-quartz: quartz timing task module, which configures, starts, stops and monitors tasks. 
-8. eframe-Web: Web application service module, service application API configuration injection, providing interface.
-9. module-extend: module extension module, back-end service extension, followed by sms, social and other general configurations and jar references to achieve extension.
-10. scripts: database scripts, API interface documents, sh scripts running on the server side, etc.
-
-
-## Technical Guidelines
-### Software Architecture
-```
-Springboot + Framework + Security + Mybatis
-```
-
-### Installation
-1. mvn clean install
-2. mvn clean deploy
-
-### Instructions
-1. use by maven
-```
-   <dependency>
-      <groupId>${groupId}</groupId>
-      <artifactId>${artifactId}</artifactId>
-      <version>${project.version}</version>
-      <scope>test</scope>
-   </dependency>
-```
-2. use direct jar
-
-## Contribution
-1.  Fork repository
-2.  new Feat_1.0.0 branch
-3.  commit
-```
-git config user.name linlaninfo
-git config user.email linlannet@163.com
-git config --global --list
-git config --list
-```
-4. new Pull Request
-5. create and commit tag
-```
-create
-git tag -a 1.0.0 -m "initial version"
-list
-git tag
-commit
-git push origin --tags
-delete
-git tag -d 1.0.0
-
-install: mvn clean install
-deploy: mvn clean deploy
-
-```
-6. other
-
-## Licence
-
-[Apache 2.0 © eframe-java-backend 2023](./LICENSE)
-
-# eframe-vue-frontend
-
-[![License](https://img.shields.io/badge/license-Apache%202-green.svg)](https://www.apache.org/licenses/LICENSE-2.0)
-![java version](https://img.shields.io/badge/JAVA-17-green.svg)
+![spring boot](https://img.shields.io/badge/Spring%20Boot-3.5.8-brightgreen.svg)
 ![gitee star](https://gitee.com/linlannet/linlan-eframe/badge/star.svg)
 
 ## Introduction
 
-Enterprise-level front-end framework, based on VUE framework, realizes the front-end project of organization, administrator, role, post, grouping and message management.
+EFRAME is a Java enterprise back-end framework based on Spring Boot, using framework and security components that support Java 17. Data access uses MyBatis with one codebase adaptable to multiple databases, and scaffolding quickly generates mappers and related code.
+Inspired by RuoYi, it implements the baseline management of administrators, organizations, roles, permissions, groups and messages, providing a framework for enterprise applications to extend.
 
+**Common tools:** <https://gitee.com/linlannet/java-tools-parent>
 
-Back-end engineering path:
-**JAVA Back-end：** <a target="_blank">https://gitee.com/linlannet/linlan-eframe/tree/master/eframe-java-backend
+**Code generator:** <https://gitee.com/linlannet/java-tools-generate>
 
-## Change Log
+**Non-intrusive API doc plugin:** <https://gitee.com/linlannet/java-plugin-doc-generate>
 
-[CHANGELOG](./CHANGELOG.md)
+**EFRAME usage guide and results:** <https://gitee.com/linlannet/linlan-eframe/tree/master/eframe-docs>
 
+## Version History
 
-## Application effect
+All changes are recorded in [CHANGELOG](./CHANGELOG.md). This README keeps only stable architecture, module and usage documentation.
 
-**Guide to the use of EFRAME ：** <a target="_blank">https://gitee.com/linlannet/linlan-eframe/tree/master/eframe-docs
+## Table of Contents
 
+- [1. Repository Structure](#1-repository-structure)
+- [2. Quick Start](#2-quick-start)
+- [3. Back-end Modules](#3-back-end-modules)
+- [4. Configuration and Ports](#4-configuration-and-ports)
+- [5. Front-end Project](#5-front-end-project)
+- [6. AI Pilot Toolkit](#6-ai-pilot-toolkit)
+- [7. Directory Layout](#7-directory-layout)
+- [8. Conventions](#8-conventions)
+- [9. Documentation Index](#9-documentation-index)
+- [Contributing](#contributing)
+- [License](#license)
 
+---
 
-## Preparation
+## 1. Repository Structure
 
-- [node](http://nodejs.org/) and [git](https://git-scm.com/) - Project development environment
-- [Vite](https://vitejs.dev/) - Familiar with vite features
-- [Vue3](https://v3.vuejs.org/) - Familiar with Vue basic syntax
-- [TypeScript](https://www.typescriptlang.org/) - Familiar with the basic syntax of `TypeScript`
-- [Es6+](http://es6.ruanyifeng.com/) - Familiar with es6 basic syntax
-- [Vue-Router-Next](https://next.router.vuejs.org/) - Familiar with the basic use of vue-router
-- [Ant-Design-Vue](https://antdv.com/docs/vue/introduce-cn/) - ui basic use
-- [Mock.js](https://github.com/nuysoft/Mock) - mockjs basic syntax
+| Directory | Description | Stack |
+| ---- | ---- | ---- |
+| [backend](./backend) | Enterprise back end, Maven multi-module | Java 17 + Spring Boot 3.5.8 + Spring Framework 6.2.14 + Spring Security 6.5.7 + MyBatis 3.5.19 + Druid + PageHelper + Quartz |
+| [frontend](./frontend) | Management front end | Vue 3.2 + Element Plus 2.9 + Ant Design Vue 3 + Pinia + Vue Router 4 + Vite 2.7 |
+| [ai-pilot](./ai-pilot) | LINLAN AI development assistant toolkit | Markdown templates + workflows |
+| [docs](./docs) | Smart-doc generated API docs (HTML / OpenAPI) | smart-doc |
 
+## 2. Quick Start
 
-## Install and use
+### 2.1 Requirements
 
-- Get the project code
+- JDK 17
+- Maven 3.8+
+- Node.js and npm (front end)
+- MySQL (the default data source; an H2 local data source is also configured)
+
+### 2.2 Back-end Build
 
 ```bash
-git clone https://gitee.com/linlannet/linlan-eframe/tree/master/eframe-vue-frontend
+cd backend
+mvn clean install             # install all modules to the local repository
+mvn clean package -DskipTests # package only
 ```
 
-- Install dependencies
+### 2.3 Back-end Run
 
 ```bash
-cd eframe-vue-frontend
+# Option 1: run with Maven
+mvn -pl eframe-web -am spring-boot:run -Dspring-boot.run.profiles=dev
 
+# Option 2: run the packaged jar
+java -jar eframe-web/target/eframe-web.jar --spring.profiles.active=dev
+```
+
+Main class: `backend/eframe-web/src/main/java/net/linlan/FrameApplication.java`
+
+### 2.4 Front-end Run
+
+```bash
+cd frontend
 npm install
-
+npm run dev        # vite --mode dev
+npm run build      # vite build --mode prod
+npm run preview
 ```
 
-- run
+> The front-end port is read from the `VITE_PORT` environment variable. The repository does not ship `.env.*` files; create `.env.dev` / `.env.prod` under `frontend/` and set `VITE_PORT`. The `/dev_api` dev proxy targets `http://localhost:8081/eframe_backend/`.
+
+## 3. Back-end Modules
+
+| Module | Description |
+| --- | --- |
+| `eframe-support` | Framework support: utilities and data toolkits |
+| `eframe-model` | Model layer: services and DAOs for database access |
+| `eframe-core` | Core shared business logic |
+| `eframe-view` | View logic with read/write separation |
+| `eframe-api` | Framework-level common API resources |
+| `module-generator` | Code generation, supporting simple and read/write-separated modes |
+| `module-quartz` | Quartz scheduling: configure, start, stop and monitor jobs |
+| `eframe-web` | Web application, API wiring and entry point |
+| `module-extend` | Extension module for SMS, social and other integrations |
+| `scripts` | SQL scripts, API docs and server scripts |
+
+Dependency direction: `eframe-web` → `eframe-api` / `eframe-view` / `eframe-core` / `eframe-model` / `eframe-support`; `module-generator`, `module-quartz` and `module-extend` are pluggable capability modules.
+
+### 3.1 Core Capabilities
+
+- Administrator, organization, role, post, group and message management
+- Permission and data-scope control (Spring Security)
+- Multi-datasource support (Druid + DynamicDataSource)
+- MyBatis mappers and pagination (PageHelper)
+- Code generation (module-generator)
+- Scheduled jobs (module-quartz)
+- API docs (smart-doc, output in `docs/api-docs`)
+
+## 4. Configuration and Ports
+
+| Item | File | Value |
+| --- | --- | --- |
+| Default profile | `backend/eframe-web/src/main/resources/application.yml` | `ver` |
+| Dev port / context | `application-dev.yml` | `8081` / `/eframe_backend/` |
+| Prod port / context | `application-prod.yml` | `8310` / `/eframe_backend` |
+| Default datasource | `application-dev.yml` | `jdbc:mysql://localhost:3306/eframedb_1.0` (user `lldba`) |
+| H2 local datasource | `application-dev.yml` | `jdbc:h2:~/H2Data/lldb` |
+| Front-end proxy | `frontend/vite.config.js` | `/dev_api` → `http://localhost:8081/eframe_backend/` |
+
+> Note: only `application-dev.yml` and `application-prod.yml` are present, while `application.yml` activates `ver` by default. Start locally with `--spring.profiles.active=dev`, or provide your own `application-ver.yml`. Inject production credentials and secrets externally; never commit them.
+
+## 5. Front-end Project
+
+The management UI covers organizations, administrators, roles, posts, groups and messages:
+
+```text
+frontend/src/
+├── api/            admin / monitor / system / tool APIs
+├── views/          admin, monitor, profile, tool, workbench, login, error
+├── components/     FileUpload, ImageUpload, Pagination, DictTag, iFrame, etc.
+├── directive/      permission directives
+├── plugins/        global plugins
+├── utils/          dict and shared utilities
+└── assets/         images and styles
+```
+
+Details: [frontend/README.en.md](./frontend/README.en.md) · [frontend/CHANGELOG.md](./frontend/CHANGELOG.md)
+
+## 6. AI Pilot Toolkit
+
+`ai-pilot/`, `AGENTS.md`, `CLAUDE.md`, `VERSION.md` and the `.trae/` / `.codebuddy/` rule entries form the LINLAN AI development assistant toolkit (v1.0.0-linlan).
+
+- Toolkit overview: [ai-pilot/README.md](./ai-pilot/README.md)
+- Version and tool compatibility: [VERSION.md](./VERSION.md)
+- Templates: `ai-pilot/standards/` (15 templates for requirements, design, API, database, tests, review, release and AI usage)
+- Workflows: `ai-pilot/reference/workflows/` (init project, start/finish task, requirement, design, test cases, coding, testing, review, summary)
+- Task artifacts: `ai-pilot/poc/{task-id}/`
+
+> The toolkit is a process reference and does not change the existing build, release or review process. AI output must pass human review, build checks and tests before delivery.
+
+## 7. Directory Layout
+
+```text
+linlan-eframe/
+├── backend/                 Maven multi-module back end
+│   ├── pom.xml              Parent POM (1.2.2)
+│   ├── eframe-support/      Utilities and data support
+│   ├── eframe-model/        Model layer (service/dao)
+│   ├── eframe-core/         Core shared logic
+│   ├── eframe-view/         View logic (read/write separation)
+│   ├── eframe-api/          Common API resources
+│   ├── module-generator/    Code generation
+│   ├── module-quartz/       Scheduled jobs
+│   ├── eframe-web/          Web app and entry point
+│   ├── module-extend/       Extension module
+│   └── scripts/             bin / codestyle / docker / sql
+├── frontend/                Vue3 management front end
+├── docs/api-docs/           Smart-doc API docs
+├── ai-pilot/                AI pilot templates and workflows
+├── AGENTS.md                AI agent conventions
+├── CLAUDE.md                Claude Code bridge
+├── VERSION.md               AI toolkit version notes
+├── llms.txt                 AI agent quick index
+└── CHANGELOG.md             Version history
+```
+
+## 8. Conventions
+
+- Keep module boundaries: controllers only translate protocol; business rules live in service / view / core
+- When adding tables, update `backend/scripts/sql/` and the matching mapper XML
+- Return the framework `ResponseEntity` envelope; use integer `code` values
+- New Maven modules must be declared in `backend/pom.xml` (`<modules>` and dependency management)
+- Front-end APIs go through `frontend/src/api/`, pages in `frontend/src/views/`, shared components in `frontend/src/components/`
+- Keep `README.md` and `README.en.md` in sync; update the root `CHANGELOG.md` and the matching sub-project changelog
+- Run `mvn clean install` before release; run `npm run build` for the front end
+
+## 9. Documentation Index
+
+| Document | Content |
+| --- | --- |
+| [CHANGELOG.md](./CHANGELOG.md) | Back-end / front-end version history and index |
+| [AGENTS.md](./AGENTS.md) | Layout, commands and constraints for AI agents |
+| [llms.txt](./llms.txt) | Machine-readable summary and command index |
+| [backend/README.en.md](./backend/README.en.md) | Back-end sub-project guide |
+| [backend/CHANGELOG.md](./backend/CHANGELOG.md) | Back-end changelog |
+| [frontend/README.en.md](./frontend/README.en.md) | Front-end sub-project guide |
+| [frontend/CHANGELOG.md](./frontend/CHANGELOG.md) | Front-end changelog |
+| [backend/FAQ.md](./backend/FAQ.md) | Back-end branches and FAQ |
+| [frontend/FAQ.md](./frontend/FAQ.md) | Front-end branches and FAQ |
+| [docs/api-docs/README.md](./docs/api-docs/README.md) | Smart-doc API docs |
+| [ai-pilot/README.md](./ai-pilot/README.md) | AI pilot toolkit |
+| [VERSION.md](./VERSION.md) | AI toolkit version and compatibility |
+
+## Contributing
+
+You are welcome to join! [Raise an issue](https://gitee.com/linlannet/linlan-eframe/issues/new/choose) or submit a Pull Request.
+
+1. Fork the repository
+2. Create a `Feat_1.0.0` branch
+3. Commit your changes
+4. Open a Pull Request
+5. Create and push a tag
 
 ```bash
-npm serve
+git config user.name linlaninfo
+git config user.email linlannet@163.com
+
+git tag -a 1.0.0 -m "initial version"
+git push origin --tags
+
+Local build: mvn clean install
+Deploy:      mvn clean deploy
 ```
-
-- build
-
-```bash
-npm build
-```
-
-## How to contribute
-
-You are very welcome to join！[Raise an issue](https://gitee.com/linlannet/linlan-eframe/issues/new/choose) or submit a Pull Request。
-
-**Pull Request:**
-
-1. Fork code!
-2. Create your own branch: `git checkout -b feat/xxxx`
-3. Submit your changes: `git commit -am 'feat(function): add xxxxx'`
-4. Push your branch: `git push origin feat/xxxx`
-5. Submit`pull request`
-
 
 ## License
 
-[Apache 2.0 © eframe-vue-frontend 2023](LICENSE)
-
-# LINLAN AI Development Assistant Reference
-
-[中文](./README.md)
-
-Version: `v1.0.0-linlan` | Release: 2026-07
-
-This reference package supports LINLAN's AI pilot projects, compatible with **Trae**, **CodeBuddy**, **Claude Code**, and **opencode**. Its goal is to reduce the context preparation cost for AI-assisted development tasks, helping users document requirements, design, testing, review, and evaluation materials without altering existing development workflows.
-
----
-
-## File Index
-
-### Root Directory
-
-| File | Description |
-|---|---|
-| [AGENTS.md](./AGENTS.md) | Project-level AI assistant reference (opencode native, includes LINLAN pilot project references) |
-| [CLAUDE.md](./CLAUDE.md) | Claude Code bridge file (includes company tech stack) |
-| [VERSION.md](./VERSION.md) | Version, compatibility, and distribution notes |
-
-### Tool Rule Entries
-
-| Tool | File | Description |
-|---|---|---|
-| Trae | [.trae/rules/poc-rule.md](./.trae/rules/poc-rule.md) | Trae project rule auto-load |
-| CodeBuddy | [.codebuddy/rules/poc-rule.md](./.codebuddy/rules/poc-rule.md) | CodeBuddy project rule auto-load |
-
-### AI Pilot Main
-
-| File | Description |
-|---|---|
-| [ai-pilot/README.md](./ai-pilot/README.md) | Reference package overview and directory guide |
-
-### Standard Templates (`ai-pilot/standards/`)
-
-| File | Purpose |
-|---|---|
-| [00-ai-usage-rule.md](./ai-pilot/standards/00-ai-usage-rule.md) | AI usage rules overview |
-| [01-requirement-spec-template.md](./ai-pilot/standards/01-requirement-spec-template.md) | Requirement specification template |
-| [02-design-template.md](./ai-pilot/standards/02-design-template.md) | Technical design template |
-| [03-api-design-template.md](./ai-pilot/standards/03-api-design-template.md) | API design template |
-| [04-db-design-template.md](./ai-pilot/standards/04-db-design-template.md) | Database design template |
-| [05-test-case-template.md](./ai-pilot/standards/05-test-case-template.md) | Test case template |
-| [06-code-review-template.md](./ai-pilot/standards/06-code-review-template.md) | Code review template |
-| [07-release-note-template.md](./ai-pilot/standards/07-release-note-template.md) | Release note template |
-| [08-ai-usage-record-template.md](./ai-pilot/standards/08-ai-usage-record-template.md) | AI usage record template |
-| [09-poc-evaluation-template.md](./ai-pilot/standards/09-poc-evaluation-template.md) | POC evaluation template |
-| [10-prompt-guide.md](./ai-pilot/standards/10-prompt-guide.md) | Prompt writing guide |
-| [11-context-1week-template.md](./ai-pilot/standards/11-context-1week-template.md) | 1WEEK task context template |
-| [12-context-3day-template.md](./ai-pilot/standards/12-context-3day-template.md) | 3DAY task context template |
-| [13-context-1day-template.md](./ai-pilot/standards/13-context-1day-template.md) | 1DAY task context template |
-| [14-test-execution-log-template.md](./ai-pilot/standards/14-test-execution-log-template.md) | Test execution log template |
-
-### Quick Command Workflows (`ai-pilot/reference/workflows/`)
-
-| Command | File | Description |
-|---|---|---|
-| Init Project | [00-init-project.md](./ai-pilot/reference/workflows/00-init-project.md) | Scan config and prefill project info |
-| Start Task | [01-start-task.md](./ai-pilot/reference/workflows/01-start-task.md) | Create task directory and base artifacts |
-| Clarify Requirements | [02-prepare-requirement.md](./ai-pilot/reference/workflows/02-prepare-requirement.md) | Generate or update requirement docs |
-| Start Design | [03-prepare-design.md](./ai-pilot/reference/workflows/03-prepare-design.md) | Generate or update technical design |
-| Write Test Cases | [04-prepare-test-cases.md](./ai-pilot/reference/workflows/04-prepare-test-cases.md) | Generate or update test cases |
-| Start Coding | [05-start-coding.md](./ai-pilot/reference/workflows/05-start-coding.md) | Implement code based on task context |
-| Run Tests | [06-run-tests.md](./ai-pilot/reference/workflows/06-run-tests.md) | Run minimal necessary test suite |
-| Code Review | [07-code-review.md](./ai-pilot/reference/workflows/07-code-review.md) | Risk review based on diff |
-| Finish Task | [08-finish-task.md](./ai-pilot/reference/workflows/08-finish-task.md) | Supplement AI usage record and completeness check |
-| Generate Summary | [09-generate-summary.md](./ai-pilot/reference/workflows/09-generate-summary.md) | Generate pilot summary from task artifacts |
-
-### Reference Materials (`ai-pilot/reference/`)
-
-| File | Description |
-|---|---|
-| [quick-commands.md](./ai-pilot/reference/quick-commands.md) | Quick command reference card |
-| [metrics-definition.md](./ai-pilot/reference/metrics-definition.md) | Evaluation metrics definitions |
-| [summary-template.md](./ai-pilot/reference/summary-template.md) | Phase review template |
-| [.gitignore.template](./ai-pilot/reference/.gitignore.template) | Security gitignore reference |
-| [pre-commit-config.yaml](./ai-pilot/reference/pre-commit-config.yaml) | Gitleaks pre-commit reference |
-
-### IDE Config (`.idea/`)
-
-| File | Description |
-|---|---|
-| [.gitignore](./.idea/.gitignore) | IDE directory gitignore |
-| [linlan-ai-assist.iml](./.idea/linlan-ai-assist.iml) | IntelliJ module file |
-| [misc.xml](./.idea/misc.xml) | Miscellaneous IDE config |
-| [modules.xml](./.idea/modules.xml) | Module configuration |
-
----
-
-## Task Artifacts Directory
-
-Real task artifacts should be placed in:
-
-```
-ai-pilot/poc/{task_id}/
-```
-
-Standard task artifacts:
-
-| File | Purpose |
-|---|---|
-| `context.md` | Task context index |
-| `requirement.md` | Requirement background, scope, acceptance criteria |
-| `design.md` | Technical solution, impact scope, key flows |
-| `api-design.md` | API definitions, request/response, error codes |
-| `db-design.md` | Table structure, fields, indexes, migration strategy |
-| `test-cases.md` | Functional, exception, boundary, regression tests |
-| `test-execution-log.md` | Test execution log |
-| `review-summary.md` | Code review summary |
-| `release-note.md` | Release content, impact, rollback plan |
-| `ai-usage-record.md` | AI usage process, adoption rate, efficiency metrics |
-
----
-
-## Task Complexity Levels
-
-| Level | Use Case | Recommended Artifacts |
-|---|---|---|
-| **1WEEK** (>3 days) | New features, architecture changes, cross-system refactoring | Full context + 8 core files |
-| **3DAY** (1-3 days) | Medium requirements, API development | Simplified context + 5 core files |
-| **1DAY** (<1 day) | Bug fixes, config changes | review-summary + ai-usage-record |
-
----
-
-## Quick Start
-
-1. Extract the reference package to the project root
-2. In the AI chat, enter `Initialize Project` to let AI scan and prefill `AGENTS.md` sections 1-4
-3. Add business context, confirm AI inferences, then start using AI tools
-
----
-
-## LINLAN Pilot Project Reference
-
-| Project | Type | Tech Stack |
-|---|---|---|
-| linlan-claw-ops | Knowledge base platform | Python Flask + Dashboard + MySQL |
-| anli-loop | Case management system | Java Spring Boot + Vue3 + MySQL + Redis |
-| linlan-skills | AI skill collection | Markdown + Python |
-| linlan-super-ip | Data tracking tool | Python |
-| shrcj-rcqy-skills | Code generator | Java + MySQL |
-
----
-
-## Usage Boundaries
-
-- Do not place production keys, tokens, connection strings, or sensitive data in this package
-- Not all tasks need all 8 files; tailor to task complexity
-- AI output should go through review, build checks, and test verification before delivery
+[Apache 2.0 © eframe-java-backend 2023](./LICENSE)

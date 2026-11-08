@@ -27,7 +27,8 @@
         "vue-request": "latest",
         "dayjs": "latest",
         "file-saver": "2.0.5",
-        "moment": "^2.26.0"
+        "moment": "^2.26.0",
+        "@linlannet/lib-vue-base": "file:../../vue-base/lib-vue-base"
     },
     "devDependencies": {
         "@vitejs/plugin-vue": "^2.0.1",

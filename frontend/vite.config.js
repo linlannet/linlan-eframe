@@ -13,6 +13,7 @@ export default ({ mode }) => {
         resolve: {
             alias: {
                 '@': path.resolve(__dirname, './src'),
+                '@linlannet/lib-vue-base': path.resolve(__dirname, '../../vue-base/lib-vue-base'),
             },
         },
         base: './',
@@ -24,7 +25,8 @@ export default ({ mode }) => {
             proxy: {
                 '/dev_api': {
                     // target: 'https://linlan.net/eframe_backend/',
-                    target: 'http://localhost:8081/eframe_backend/',
+                    // target: 'http://localhost:8081/eframe_backend/',
+                    target: 'http://localhost:8081/xiaolan_backend/',
                     changeOrigin: true,
                     secure:false,
                     rewrite: (path) => path.replace(/^\/dev_api/, ''),

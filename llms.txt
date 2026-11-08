@@ -1,0 +1,57 @@
+# EFRAME — 企业级全栈支撑框架 (linlan-eframe)
+
+> Java 17 + Spring Boot 3.5.8 企业级后端框架 + Vue3 管理前端，内置机构、管理员、角色、权限、分组、消息、代码生成与定时任务能力。
+
+Key capabilities:
+- 管理员 / 机构 / 角色 / 岗位 / 分组 / 消息管理
+- Spring Security 权限与数据范围控制
+- MyBatis + Druid 多数据源与 PageHelper 分页
+- module-generator 代码生成
+- module-quartz 定时任务
+- Smart-doc 接口文档生成
+- ai-pilot AI 开发助手模板与 workflow
+
+Tech stack: Java 17, Spring Boot 3.5.8, Spring Framework 6.2.14, Spring Security 6.5.7, MyBatis 3.5.19, Druid, Quartz, Maven
+Frontend stack: Vue 3.2, Element Plus 2.9, Ant Design Vue 3, Pinia, Vue Router 4, Vite 2.7
+Version: backend 1.2.2, frontend 1.2.0
+Repository: https://gitee.com/linlannet/linlan-eframe
+
+Build / Test:
+- Backend build:  `cd backend && mvn clean install`
+- Backend run:    `mvn -pl eframe-web -am spring-boot:run -Dspring-boot.run.profiles=dev`
+- Backend jar:    `java -jar backend/eframe-web/target/eframe-web.jar --spring.profiles.active=dev`
+- Backend test:   `mvn test`
+- Frontend:       `cd frontend && npm install && npm run dev`
+- Frontend build: `npm run build`
+- Frontend has no test/lint script configured
+
+Runtime:
+- Dev:  port 8081, context `/eframe_backend/`
+- Prod: port 8310, context `/eframe_backend`
+- Default profile: `ver` (only dev/prod YAML present in repo)
+- Frontend dev proxy: `/dev_api` → `http://localhost:8081/eframe_backend/`
+
+Module map:
+- backend/eframe-support       utilities and data support
+- backend/eframe-model         model layer (service/dao)
+- backend/eframe-core          core shared logic
+- backend/eframe-view          view logic (read/write separation)
+- backend/eframe-api           common API resources
+- backend/module-generator     code generation
+- backend/module-quartz        scheduled jobs
+- backend/eframe-web           web app + FrameApplication
+- backend/module-extend        extension module
+- backend/scripts              bin / codestyle / docker / sql
+- frontend/src                 api / views / components / directive / utils
+- docs/api-docs                Smart-doc generated API docs
+- ai-pilot                     AI pilot templates and workflows
+
+Docs:
+- README.md / README.en.md
+- AGENTS.md
+- CHANGELOG.md
+- backend/README.md / backend/CHANGELOG.md
+- frontend/README.md / frontend/CHANGELOG.md
+- docs/api-docs/README.md
+- ai-pilot/README.md
+- VERSION.md

@@ -56,10 +56,9 @@ Springboot + Framework + Security + Mybatis
 1. 通过依赖使用
 ```
    <dependency>
-      <groupId>${groupId}</groupId>
-      <artifactId>${artifactId}</artifactId>
-      <version>${project.version}</version>
-      <scope>test</scope>
+      <groupId>net.linlan.eframe</groupId>
+      <artifactId>eframe-core</artifactId>
+      <version>1.2.3</version>
    </dependency>
 ```
 2. 直接拷贝打包后的jar包

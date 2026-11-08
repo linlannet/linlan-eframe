@@ -146,31 +146,45 @@ vueRouter.beforeEach(async (to, from) => {
 
 // 动态新增路由项
 const addDynamicRoute = function(dynamicRoute) {
-    if (dynamicRoute.component && dynamicRoute.component != 'ParentView') {
-        let routeUrl = '/src/views' + dynamicRoute.component + '.vue'
-        if (modules[routeUrl]) {
-            // 先取菜单，如果没有，则使用组件作为路由使用
-            let name = dynamicRoute.name || dynamicRoute.component
-            // 默认注册路不传入参数
-            let path = name.split('?')[0]
-            vueRouter.addRoute('HomePage', {
-                name: name,
-                path: path,
-                component: modules[routeUrl],
-            });
-        }
+    if (!dynamicRoute || !dynamicRoute.component || dynamicRoute.component == 'ParentView') {
+        return
+    }
+    const component = String(dynamicRoute.component)
+    const routeUrl = '/src/views' + component + '.vue'
+    if (!modules[routeUrl]) {
+        return
+    }
+    // 后端菜单可能下发数字 id 或空 url，统一转成字符串再注册
+    const name = String(dynamicRoute.name || component)
+    // 默认注册路不传入参数
+    const path = name.split('?')[0]
+    try {
+        vueRouter.addRoute('HomePage', {
+            name: name,
+            path: path,
+            component: modules[routeUrl],
+        });
+    } catch (error) {
+        console.warn('菜单路由注册失败:', name, error)
     }
 }
 const addDynamicRoute2 = function(dynamicRoute) {
-    if (dynamicRoute.component && dynamicRoute.component != 'ParentView') {
-        let routeUrl = '/src/views' + dynamicRoute.component + '.vue'
-        if (modules[routeUrl]) {
-            vueRouter.addRoute('HomePage', {
-                name: dynamicRoute.name,
-                path: dynamicRoute.path,
-                component: modules[routeUrl],
-            });
-        }
+    if (!dynamicRoute || !dynamicRoute.component || dynamicRoute.component == 'ParentView') {
+        return
+    }
+    const component = String(dynamicRoute.component)
+    const routeUrl = '/src/views' + component + '.vue'
+    if (!modules[routeUrl]) {
+        return
+    }
+    try {
+        vueRouter.addRoute('HomePage', {
+            name: String(dynamicRoute.name || component),
+            path: String(dynamicRoute.path || component),
+            component: modules[routeUrl],
+        });
+    } catch (error) {
+        console.warn('菜单路由注册失败:', dynamicRoute.name, error)
     }
 }
 

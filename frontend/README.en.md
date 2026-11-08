@@ -55,13 +55,13 @@ npm install
 - run
 
 ```bash
-npm serve
+npm run dev
 ```
 
 - build
 
 ```bash
-npm build
+npm run build
 ```
 
 ## How to contribute

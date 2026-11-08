@@ -1,17 +1,30 @@
 import Cookies from 'js-cookie'
+import { createCookieStorage, createTokenManager } from '@linlannet/lib-vue-base/core'
 
 const TokenKey = 'Admin-Token'
 
+const tokenManager = createTokenManager({
+  storageKey: TokenKey,
+  headerName: 'Authorization',
+  scheme: 'Linlan',
+  storage: createCookieStorage()
+})
+
 export function getToken() {
-  return Cookies.get(TokenKey)
+  return tokenManager.getToken()
 }
 
 export function setToken(token) {
-  return Cookies.set(TokenKey, token)
+  tokenManager.setToken(token)
+  return token
 }
 
 export function removeToken() {
-  return Cookies.remove(TokenKey)
+  tokenManager.removeToken()
+}
+
+export function buildAuthorization() {
+  return tokenManager.buildAuthorization()
 }
 
 const UserId = 'userId'

@@ -106,7 +106,7 @@
   </a-layout>
 </template>
 <script setup>
-import { ref, computed, reactive, nextTick } from 'vue';
+import { ref, computed, reactive, nextTick, watch } from 'vue';
 import { useRouter, useRoute } from 'vue-router';
 import { useStore, mapState, mapGetters } from 'vuex';
 import { UserOutlined, MenuFoldOutlined, MenuUnfoldOutlined, HomeOutlined, DownOutlined } from '@ant-design/icons-vue';
@@ -155,12 +155,19 @@ const menuState = reactive({
 
 // 通过从后端获取的用户可以访问的菜单信息生产前端菜单列表
 const sidebarRouters = computed(mapGetters(['sidebarRouters']).sidebarRouters.bind({ $store: vueStore }));
-// 设置一级父菜单
-sidebarRouters.value.forEach((element) => {
-  menuState.rootSubmenuKeys.push(element.path);
-});
-// 将工作台菜单添加到一级菜单节点数组中
-menuState.rootSubmenuKeys.push('workbench');
+// 同步一级菜单并默认展开，避免登录后只看到折叠菜单
+const syncRootMenus = (routers) => {
+  const keys = ['workbench'];
+  const opened = [];
+  (routers || []).forEach((element) => {
+    if (!element || !element.path) return;
+    keys.push(element.path);
+    opened.push(element.path);
+  });
+  menuState.rootSubmenuKeys = keys;
+  menuState.openedFaterMenuKeys = opened;
+};
+watch(sidebarRouters, (routers) => syncRootMenus(routers), { immediate: true });
 
 const headerInfo = reactive({ currentFatherMenuTitle: '主页', currentMenuTitle: '工作台' });
 // 刷新页面后重新选中对应的菜单

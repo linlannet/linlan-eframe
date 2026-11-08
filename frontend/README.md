@@ -61,7 +61,7 @@ npm run dev
 - 打包发布
 
 ```bash
-npm build
+npm run build
 ```
 
 ## 参与贡献
