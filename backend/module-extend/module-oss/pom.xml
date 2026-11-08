@@ -24,12 +24,12 @@
     <parent>
         <groupId>net.linlan.eframe</groupId>
         <artifactId>module-extend</artifactId>
-        <version>1.2.0</version>
+        <version>1.2.2</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
     <groupId>net.linlan.eframe</groupId>
     <artifactId>module-oss</artifactId>
-    <version>1.2.0</version>
+    <version>1.2.2</version>
     <packaging>jar</packaging>
     <name>module-oss</name>
     <description>
@@ -40,7 +40,7 @@
         <aliyun.oss.version>2.8.3</aliyun.oss.version>
         <qcloud.cos.version>4.4</qcloud.cos.version>
     </properties>
-    <url>https://gitee.com/linlannet/eframe-java-backend.git</url>
+    <url>https://gitee.com/linlannet/linlan-eframe/tree/master/eframe-java-backend</url>
     <licenses>
         <license>
             <name>Apache-2.0</name>
@@ -48,8 +48,8 @@
         </license>
     </licenses>
     <scm>
-        <url>https://gitee.com/linlannet/eframe-java-backend/tree/master/module-oss</url>
-        <connection>scm:git:git://gitee.com/linlannet/eframe-java-backend.git</connection>
+        <url>https://gitee.com/linlannet/linlan-eframe/tree/master/eframe-java-backend/module-oss</url>
+        <connection>scm:git:git://gitee.com/linlannet/linlan-eframe.git</connection>
     </scm>
     <developers>
         <developer>

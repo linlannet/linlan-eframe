@@ -126,3 +126,7 @@ platform:
             # 前后端交互RSA2048公钥、私钥配置
             public_key:
             private_key:
+
+jasypt:
+    encryptor:
+        password: Ll2023!EframeDev

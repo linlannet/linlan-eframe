@@ -3,7 +3,7 @@
     "pathPrefix": "", //设置path前缀,非必须。如配置Servlet ContextPath 。@since 2.2.3
     "isStrict": false, //是否开启严格模式
     "allInOne": true,  //是否将文档合并到一个文件中，一般推荐为true
-    "outPath": "../scripts/doc", //指定文档的输出路径
+    "outPath": "../../eframe-docs", //指定文档的输出路径
     "coverOld": true,  //是否覆盖旧的文件，主要用于mardown文件覆盖
     "createDebugPage": true,//@since 2.0.0 smart-doc支持创建可以测试的html页面，仅在AllInOne模式中起作用。
     "packageFilters": "net.linlan.frame.api.*,net.linlan.stage.*,net.linlan.*",//controller包过滤，多个包用英文逗号隔开，2.2.2开始需要采用正则：com.test.controller.*

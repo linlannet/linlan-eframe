@@ -20,7 +20,7 @@ package net.linlan.frame.mbiz.constant;
 import net.linlan.commons.core.http.HttpStatus;
 
 /**
- * Filename:HttpStatusEnum.java
+ * Filename:HttpStatusExtend.java
  * Desc:前台Api响应枚举类，支持plat、member 和 pub 三种模式
  * @author Linlan
  * CreateTime:2023/07/20 18:06

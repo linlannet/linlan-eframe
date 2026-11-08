@@ -1,8 +1,8 @@
 # eframe-java-backend
 
 [![License](https://img.shields.io/badge/license-Apache%202-green.svg)](https://www.apache.org/licenses/LICENSE-2.0)
-![java version](https://img.shields.io/badge/JAVA-1.8-green.svg)
-![gitee star](https://gitee.com/linlannet/eframe-java-backend/badge/star.svg)
+![java version](https://img.shields.io/badge/JAVA-17-green.svg)
+![gitee star](https://gitee.com/linlannet/linlan-eframe/badge/star.svg)
 
 ## Introduce
 
@@ -18,7 +18,7 @@ Learn from the framework, realize the most basic administrator, organization, ro
 
 Front-end engineering path:
 
-**VUE+TS：** <a target="_blank">https://gitee.com/linlannet/eframe-java-backend
+**VUE+TS：** <a target="_blank">https://gitee.com/linlannet/linlan-eframe/tree/master/eframe-java-backend
 
 
 ## Change Log
@@ -28,7 +28,7 @@ Front-end engineering path:
 
 ## Application effect
 
-**Guide to the use of EFRAME ：** <a target="_blank">https://gitee.com/linlannet/eframe-docs
+**Guide to the use of EFRAME ：** <a target="_blank">https://gitee.com/linlannet/linlan-eframe/tree/master/eframe-docs
 
 ## Sub Package
 1. eframe-support: frame support module, various tools and data toolkits. 

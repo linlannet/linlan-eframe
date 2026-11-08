@@ -25,11 +25,11 @@
     <parent>
         <groupId>net.linlan.eframe</groupId>
         <artifactId>module-extend</artifactId>
-        <version>1.2.0</version>
+        <version>1.2.2</version>
     </parent>
     <groupId>net.linlan.eframe</groupId>
     <artifactId>module-authn</artifactId>
-    <version>1.2.0</version>
+    <version>1.2.2</version>
     <packaging>jar</packaging>
     <name>module-authn</name>
     <description>
@@ -39,7 +39,7 @@
         <tencentcloud.sdk.sms.version>3.1.998</tencentcloud.sdk.sms.version>
         <qiniu.version>7.2.28</qiniu.version>
     </properties>
-    <url>https://gitee.com/linlannet/eframe-java-backend.git</url>
+    <url>https://gitee.com/linlannet/linlan-eframe/tree/master/eframe-java-backend</url>
     <licenses>
         <license>
             <name>Apache-2.0</name>
@@ -47,8 +47,8 @@
         </license>
     </licenses>
     <scm>
-        <url>https://gitee.com/linlannet/eframe-java-backend/tree/master/module-authn</url>
-        <connection>scm:git:git://gitee.com/linlannet/eframe-java-backend.git</connection>
+        <url>https://gitee.com/linlannet/linlan-eframe/tree/master/eframe-java-backend/module-authn</url>
+        <connection>scm:git:git://gitee.com/linlannet/linlan-eframe.git</connection>
     </scm>
     <developers>
         <developer>

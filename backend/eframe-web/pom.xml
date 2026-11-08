@@ -24,11 +24,11 @@
     <parent>
         <groupId>net.linlan.eframe</groupId>
         <artifactId>eframe-java-backend</artifactId>
-        <version>1.2.0</version>
+        <version>1.2.2</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
     <artifactId>eframe-web</artifactId>
-    <version>1.2.0</version>
+    <version>1.2.2</version>
     <packaging>jar</packaging>
     <name>eframe-web</name>
     <description>
@@ -39,7 +39,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     </properties>
-    <url>https://gitee.com/linlannet/eframe-java-backend.git</url>
+    <url>https://gitee.com/linlannet/linlan-eframe/tree/master/eframe-java-backend</url>
     <licenses>
         <license>
             <name>Apache-2.0</name>
@@ -47,8 +47,8 @@
         </license>
     </licenses>
     <scm>
-        <url>https://gitee.com/linlannet/eframe-java-backend/tree/master/eframe-web</url>
-        <connection>scm:git:git://gitee.com/linlannet/eframe-java-backend.git</connection>
+        <url>https://gitee.com/linlannet/linlan-eframe/tree/master/eframe-java-backend/eframe-web</url>
+        <connection>scm:git:git://gitee.com/linlannet/linlan-eframe.git</connection>
     </scm>
     <developers>
         <developer>
@@ -336,7 +336,7 @@
                 </configuration>
             </plugin>
 
-            <!-- 由于如下启用造成deploy上传文件较大，暂时注释。生成独立运行jar包，放开如下的注释即可 -->
+            <!-- 由于如下启用造成deploy上传文件较大，暂时注释。生成独立运行jar包，放开如下的注释即可
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
@@ -352,7 +352,7 @@
                         </goals>
                     </execution>
                 </executions>
-            </plugin>
+            </plugin>-->
 
             <!-- 为自动生成接口文档进行扩展 -->
             <plugin>

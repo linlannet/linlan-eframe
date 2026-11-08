@@ -1,8 +1,8 @@
 # eframe-java-backend
 
 [![License](https://img.shields.io/badge/license-Apache%202-green.svg)](https://www.apache.org/licenses/LICENSE-2.0)
-![java version](https://img.shields.io/badge/JAVA-1.8-green.svg)
-![gitee star](https://gitee.com/linlannet/eframe-java-backend/badge/star.svg)
+![java version](https://img.shields.io/badge/JAVA-17-green.svg)
+![gitee star](https://gitee.com/linlannet/linlan-eframe/badge/star.svg)
 
 ## 介绍
 
@@ -18,7 +18,7 @@ JAVA企业级后端框架（EFRAME），基于Springboot，采用支持 JAVA 17�
 
 前端工程路径：
 
-**VUE+TS前端工程地址：** <a target="_blank">https://gitee.com/linlannet/eframe-vue-frontend
+**VUE+TS前端工程地址：** <a target="_blank">https://gitee.com/linlannet/linlan-eframe/tree/master/eframe-vue-frontend
 
 
 ## 版本历史
@@ -27,7 +27,7 @@ JAVA企业级后端框架（EFRAME），基于Springboot，采用支持 JAVA 17�
 
 ## 应用效果
 
-**企业框架（EFRAME）使用指南及效果：** <a target="_blank">https://gitee.com/linlannet/eframe-docs
+**企业框架（EFRAME）使用指南及效果：** <a target="_blank">https://gitee.com/linlannet/linlan-eframe/tree/master/eframe-docs
 
 ## 子包简介
 1. eframe-support: frame支撑模块，各类工具类、数据工具包.

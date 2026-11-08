@@ -24,12 +24,12 @@
     <parent>
         <groupId>net.linlan.eframe</groupId>
         <artifactId>eframe-java-backend</artifactId>
-        <version>1.2.0</version>
+        <version>1.2.2</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>module-extend</artifactId>
-    <version>1.2.0</version>
+    <version>1.2.2</version>
     <packaging>pom</packaging>
     <name>module-extend</name>
     <description>
@@ -41,7 +41,7 @@
         <module>module-oss</module>
         <module>module-authn</module>
     </modules>
-    <url>https://gitee.com/linlannet/eframe-java-backend.git</url>
+    <url>https://gitee.com/linlannet/linlan-eframe/tree/master/eframe-java-backend</url>
     <licenses>
         <license>
             <name>Apache-2.0</name>
@@ -49,8 +49,8 @@
         </license>
     </licenses>
     <scm>
-        <url>https://gitee.com/linlannet/eframe-java-backend/tree/master/module-extend</url>
-        <connection>scm:git:git://gitee.com/linlannet/eframe-java-backend.git</connection>
+        <url>https://gitee.com/linlannet/linlan-eframe/tree/master/eframe-java-backend/module-extend</url>
+        <connection>scm:git:git://gitee.com/linlannet/linlan-eframe.git</connection>
     </scm>
     <developers>
         <developer>

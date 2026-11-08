@@ -29,9 +29,9 @@ spring:
         driverClassName: com.mysql.cj.jdbc.Driver
         druid:
             first: #数据源1-产品数据源
-                url: ENC(VtQCCE6cDu4s8PrtSVPfzsxKMb0QnCjYHFSwS/xRukWg4lJ5O66tBu/kyZxlHF/kpOlkeLmybXW9/Ax9V0uXCQ0IBypHD7S85Qf73wud8w9pRCKUG/uUI5Rqcr2a4w4LpU+2JkC+F/2KTgLh2e3tNv275qFzPJO1MpTOwP3C62pO0TMoqr2skhdqfTLwwHe5akMM1CGeuiPWeUM/WNg3NgetohKJ1ZrBbQkvuRsgkWHcKSohvKOfpUTbTQNl3hecEkGzs4vDin6oNLpTWtMZd7pH5906pI6c)
-                username: ENC(AFMlrHtGTsgv1996ntwDTw==)
-                password: ENC(RlZ72w8B5tePqOYBeIp6aNSctMB3d00C)
+                url: ENC(TztMY5mUW5Z+vkpItTdwXtepVU8FOhyUIqgwBkzJTSnf/r9es9cxCtT/r3P9ueDOeSQXEcYGjj2p48jkwtGxn94sYq/Ciw49taCPcRcjdkS86WQ5nGqoYIGkaVR2Zx0XrvMjf+5OpyyyT9rv4R0uTG0kHncEQ9yaObJV1bM8JArU+yjJ1gifOQAllZYww1KkZj7kvnNfhBr80YZxObs04Zn6exAr6QUW6pzOE2HjNWHlCFbhgI36qYWzkpya265JIEC0mj/J7LFJno1JMQPyr6YsIiFILJr8)
+                username: ENC(JcPIC0N0sRrbjD3Gw6bGtw==)
+                password: ENC(h7gKdWJPnZFGAte284m0VHywPDjKRuoX)
             h2: #数据源-H2本地数据库
                 url: jdbc:h2:~/H2Data/lldb;AUTO_SERVER=TRUE;LOG=0;UNDO_LOG=0
                 username: sa
@@ -89,7 +89,7 @@ spring:
         # redis 配置
         redis:
             # 地址
-            host: ENC(JhPS01GkvgppVXjOvqXeGiASep0iPwzD)
+            host: ENC(KkOfdq1V7kIE6qM6wd3x4jRLxhWAlAqj)
             # 端口，默认为6379
             port: 6379
             # 数据库索引
@@ -124,3 +124,7 @@ platform:
             # 前后端交互RSA2048公钥、私钥配置
             public_key:
             private_key:
+
+jasypt:
+    encryptor:
+        password: Ll2023!EframeProd

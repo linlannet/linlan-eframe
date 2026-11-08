@@ -1,8 +1,8 @@
 # eframe-vue-frontend
 
 [![License](https://img.shields.io/badge/license-Apache%202-green.svg)](https://www.apache.org/licenses/LICENSE-2.0)
-![java version](https://img.shields.io/badge/JAVA-1.8-green.svg)
-![gitee star](https://gitee.com/linlannet/eframe-vue-frontend/badge/star.svg)
+![java version](https://img.shields.io/badge/JAVA-17-green.svg)
+![gitee star](https://gitee.com/linlannet/linlan-eframe/badge/star.svg)
 
 ## 简介
 
@@ -11,7 +11,7 @@
 
 后端工程路径：
 
-**JAVA后端工程地址：** <a target="_blank">https://gitee.com/linlannet/eframe-java-backend
+**JAVA后端工程地址：** <a target="_blank">https://gitee.com/linlannet/linlan-eframe/tree/master/eframe-java-backend
 
 
 ## 修改历史记录
@@ -21,7 +21,7 @@
 
 ## 应用效果
 
-**企业框架（EFRAME）使用指南及效果：** <a target="_blank">https://gitee.com/linlannet/eframe-docs
+**企业框架（EFRAME）使用指南及效果：** <a target="_blank">https://gitee.com/linlannet/linlan-eframe/tree/master/eframe-docs
 
 
 ## 环境准备
@@ -40,7 +40,7 @@
 - 获取项目代码
 
 ```bash
-git clone https://gitee.com/linlannet/eframe-vue-frontend.git
+git clone https://gitee.com/linlannet/linlan-eframe/tree/master/eframe-vue-frontend
 ```
 
 - 安装依赖
@@ -66,7 +66,7 @@ npm build
 
 ## 参与贡献
 
-欢迎你的加入！[提交 issue](https://gitee.com/linlannet/eframe-vue-frontend/issues/new/choose) 或者提交拉取请求。
+欢迎你的加入！[提交 issue](https://gitee.com/linlannet/linlan-eframe/issues/new/choose) 或者提交拉取请求。
 
 **拉取请求步骤:**
 

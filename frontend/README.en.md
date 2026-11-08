@@ -1,8 +1,8 @@
 # eframe-vue-frontend
 
 [![License](https://img.shields.io/badge/license-Apache%202-green.svg)](https://www.apache.org/licenses/LICENSE-2.0)
-![java version](https://img.shields.io/badge/JAVA-1.8-green.svg)
-![gitee star](https://gitee.com/linlannet/eframe-vue-frontend/badge/star.svg)
+![java version](https://img.shields.io/badge/JAVA-17-green.svg)
+![gitee star](https://gitee.com/linlannet/linlan-eframe/badge/star.svg)
 
 ## Introduction
 
@@ -10,7 +10,7 @@ Enterprise-level front-end framework, based on VUE framework, realizes the front
 
 
 Back-end engineering path:
-**JAVA Back-end：** <a target="_blank">https://gitee.com/linlannet/eframe-java-backend
+**JAVA Back-end：** <a target="_blank">https://gitee.com/linlannet/linlan-eframe/tree/master/eframe-java-backend
 
 ## Change Log
 
@@ -19,7 +19,7 @@ Back-end engineering path:
 
 ## Application effect
 
-**Guide to the use of EFRAME ：** <a target="_blank">https://gitee.com/linlannet/eframe-docs
+**Guide to the use of EFRAME ：** <a target="_blank">https://gitee.com/linlannet/linlan-eframe/tree/master/eframe-docs
 
 
 
@@ -40,7 +40,7 @@ Back-end engineering path:
 - Get the project code
 
 ```bash
-git clone https://gitee.com/linlannet/eframe-vue-frontend.git
+git clone https://gitee.com/linlannet/linlan-eframe/tree/master/eframe-vue-frontend
 ```
 
 - Install dependencies
@@ -66,7 +66,7 @@ npm build
 
 ## How to contribute
 
-You are very welcome to join！[Raise an issue](https://gitee.com/linlannet/eframe-vue-frontend/issues/new/choose) or submit a Pull Request。
+You are very welcome to join！[Raise an issue](https://gitee.com/linlannet/linlan-eframe/issues/new/choose) or submit a Pull Request。
 
 **Pull Request:**
 

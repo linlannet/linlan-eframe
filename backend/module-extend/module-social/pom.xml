@@ -24,12 +24,12 @@
     <parent>
         <groupId>net.linlan.eframe</groupId>
         <artifactId>module-extend</artifactId>
-        <version>1.2.0</version>
+        <version>1.2.2</version>
     </parent>
     <groupId>net.linlan.eframe</groupId>
     <modelVersion>4.0.0</modelVersion>
     <artifactId>module-social</artifactId>
-    <version>1.2.0</version>
+    <version>1.2.2</version>
     <packaging>jar</packaging>
     <name>module-social</name>
     <description>
@@ -38,7 +38,7 @@
     <properties>
         <justauth.version>1.16.6</justauth.version>
     </properties>
-    <url>https://gitee.com/linlannet/eframe-java-backend.git</url>
+    <url>https://gitee.com/linlannet/linlan-eframe/tree/master/eframe-java-backend</url>
     <licenses>
         <license>
             <name>Apache-2.0</name>
@@ -46,8 +46,8 @@
         </license>
     </licenses>
     <scm>
-        <url>https://gitee.com/linlannet/eframe-java-backend/tree/master/module-social</url>
-        <connection>scm:git:git://gitee.com/linlannet/eframe-java-backend.git</connection>
+        <url>https://gitee.com/linlannet/linlan-eframe/tree/master/eframe-java-backend/module-social</url>
+        <connection>scm:git:git://gitee.com/linlannet/linlan-eframe.git</connection>
     </scm>
     <developers>
         <developer>

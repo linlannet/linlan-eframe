@@ -1,6 +1,6 @@
 {
     "name": "eframe-vue-frontend",
-    "version": "1.1.3",
+    "version": "1.2.0",
     "scripts": {
         "dev": "vite --mode dev",
         "build": "vite build --mode prod",
@@ -40,13 +40,13 @@
     },
     "repository": {
         "type": "git",
-        "url": "https://gitee.com/linlannet/eframe-vue-frontend.git"
+        "url": "https://gitee.com/linlannet/linlan-eframe/tree/master/eframe-vue-frontend"
     },
     "keywords": [],
     "author": "linlaninfo",
     "license": "Apache2",
     "bugs": {
-        "url": "https://gitee.com/linlannet/eframe-vue-frontend/issues"
+        "url": "https://gitee.com/linlannet/linlan-eframe/issues"
     },
-    "homepage": "https://gitee.com/linlannet/eframe-vue-frontend"
+    "homepage": "https://gitee.com/linlannet/linlan-eframe/tree/master/eframe-vue-frontend"
 }

@@ -127,7 +127,3 @@ platform:
         excludes: /api/open/*,/api/system/notice
         # 匹配链接
         urlPatterns: /api/system/*,/api/admin/*,/api/monitor/*,/api/tool/*
-
-jasypt:
-    encryptor:
-        password: Ll2023!EframeWeb

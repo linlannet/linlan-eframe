@@ -1,0 +1,73 @@
+version: '3.8'
+
+services:
+  mysql:
+    image: mysql:8.2.0
+    container_name: eframe-mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
+      MYSQL_USER: ${MYSQL_USER}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+      - ../sql:/docker-entrypoint-initdb.d
+    networks:
+      - eframe-network
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-u", "root", "-p${MYSQL_ROOT_PASSWORD}"]
+      interval: 10s
+      timeout: 5s
+      retries: 3
+
+  redis:
+    image: redis:7.2-alpine
+    container_name: eframe-redis
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+    networks:
+      - eframe-network
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 3
+
+  eframe-web:
+    build:
+      context: ../..
+      dockerfile: scripts/docker/Dockerfile
+    container_name: eframe-web
+    ports:
+      - "${EF_WEB_PORT}:8081"
+    environment:
+      - SPRING_PROFILES_ACTIVE=docker
+      - EF_CONTEXT_PATH=${EF_CONTEXT_PATH}
+    volumes:
+      - eframe_logs:/opt/eframe/logs
+      - eframe_data:/opt/eframe/data
+    networks:
+      - eframe-network
+    depends_on:
+      mysql:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+
+volumes:
+  mysql_data:
+    driver: local
+  redis_data:
+    driver: local
+  eframe_logs:
+    driver: local
+  eframe_data:
+    driver: local
+
+networks:
+  eframe-network:
+    driver: bridge
