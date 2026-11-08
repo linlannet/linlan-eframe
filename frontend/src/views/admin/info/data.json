@@ -1,0 +1,284 @@
+{
+    "pageData": {
+        "pageTitle": "会议调度",
+        "pageSubTitle": "",
+        "showLeftTree": false,
+        "treeApiUrl": "",
+        "treeSearchAble": true,
+        "treeApiParams": {},
+        "treeTableProperty": "parentId",
+        "btnGroup": [
+            {
+                "name": "新增",
+                "color": "#046BCA",
+                "icon": "Plus",
+                "type": "primary",
+                "triggerMethodsName": "handleAdd"
+            },
+            {
+                "name": "删除",
+                "color": "#D80A0D",
+                "icon": "Delete",
+                "type": "primary",
+                "triggerMethodsName": "handleMoreDel"
+            }
+        ],
+        "delApiUrl": "/api/diaodu/info/delete",
+        "delApiParams": {},
+        "tableApiUrl": "/api/diaodu/info/list",
+        "tableApiParams": {},
+        "tableFilterParams": {
+            "q": ""
+        },
+        "nameFilterKeyName": "q",
+        "tableFilterConfig": {
+            "showFilter": true,
+            "configArr": [
+                {
+                    "type": "input",
+                    "label": "标题",
+                    "field": "title",
+                    "defaultValue": "",
+                    "othersExtends": {
+                        "isAsync": false,
+                        "asyncConfig": {
+                            "url": "",
+                            "params": {},
+                            "dataPath": "data"
+                        },
+                        "options": [],
+                        "labelProperty": "label",
+                        "valueProperty": "value"
+                    }
+                },
+                {
+                    "type": "input",
+                    "label": "作者",
+                    "field": "author",
+                    "defaultValue": "",
+                    "othersExtends": {
+                        "isAsync": false,
+                        "asyncConfig": {
+                            "url": "",
+                            "params": {},
+                            "dataPath": "data"
+                        },
+                        "options": [],
+                        "labelProperty": "label",
+                        "valueProperty": "value"
+                    }
+                },
+                {
+                    "type": "input",
+                    "label": "编码",
+                    "field": "code",
+                    "defaultValue": "",
+                    "othersExtends": {
+                        "isAsync": false,
+                        "asyncConfig": {
+                            "url": "",
+                            "params": {},
+                            "dataPath": "data"
+                        },
+                        "options": [],
+                        "labelProperty": "label",
+                        "valueProperty": "value"
+                    }
+                },
+                {
+                    "type": "input",
+                    "label": "来源",
+                    "field": "source",
+                    "defaultValue": "",
+                    "othersExtends": {
+                        "isAsync": false,
+                        "asyncConfig": {
+                            "url": "",
+                            "params": {},
+                            "dataPath": "data"
+                        },
+                        "options": [],
+                        "labelProperty": "label",
+                        "valueProperty": "value"
+                    }
+                },
+
+                {
+                    "type": "select",
+                    "label": "文库类型",
+                    "field": "docType",
+                    "defaultValue": "",
+                    "othersExtends": {
+                        "isAsync": true,
+                        "asyncConfig": {
+                            "url": "/api/system/dictionary/type/sys_common_status",
+                            "params": {},
+                            "dataPath": "data"
+                        },
+                        "options": [],
+                        "labelProperty": "label",
+                        "valueProperty": "value"
+                    }
+                },
+                {
+                    "type": "input",
+                    "label": "责任地域ID或责任地域CODE",
+                    "field": "dutyAreaId",
+                    "defaultValue": "",
+                    "othersExtends": {
+                        "isAsync": false,
+                        "asyncConfig": {
+                            "url": "",
+                            "params": {},
+                            "dataPath": "data"
+                        },
+                        "options": [],
+                        "labelProperty": "label",
+                        "valueProperty": "value"
+                    }
+                },
+                {
+                    "type": "input",
+                    "label": "关键词",
+                    "field": "keywords",
+                    "defaultValue": "",
+                    "othersExtends": {
+                        "isAsync": false,
+                        "asyncConfig": {
+                            "url": "",
+                            "params": {},
+                            "dataPath": "data"
+                        },
+                        "options": [],
+                        "labelProperty": "label",
+                        "valueProperty": "value"
+                    }
+                },
+                {
+                    "type": "input",
+                    "label": "发布范围",
+                    "field": "pubRange",
+                    "defaultValue": "",
+                    "othersExtends": {
+                        "isAsync": false,
+                        "asyncConfig": {
+                            "url": "",
+                            "params": {},
+                            "dataPath": "data"
+                        },
+                        "options": [],
+                        "labelProperty": "label",
+                        "valueProperty": "value"
+                    }
+                },
+                {
+                    "type": "select",
+                    "label": "状态",
+                    "field": "status",
+                    "defaultValue": "",
+                    "othersExtends": {
+                        "isAsync": true,
+                        "asyncConfig": {
+                            "url": "/api/system/dictionary/type/sys_show_hide",
+                            "params": {},
+                            "dataPath": "data"
+                        },
+                        "options": [],
+                        "labelProperty": "label",
+                        "valueProperty": "value"
+                    }
+                },
+            ]
+        },
+        "tableColumns": [
+            {
+                "type": "index",
+                "label": "序号",
+                "minWidth": 60
+            },
+            { "type": "infoId", "label": "信息ID", "minWidth": 80 },
+            { "type": "title", "label": "标题", "minWidth": 120 },
+            { "type": "author", "label": "作者", "minWidth": 120 },
+            { "type": "publishTime", "label": "发布时间", "minWidth": 180 },
+            { "type": "docType", "label": "文库类型", "minWidth": 120 },
+            { "type": "dutyAreaId", "label": "责任地域ID或责任地域CODE", "minWidth": 120 },
+            { "type": "status", "label": "状态", "minWidth": 120 },
+
+        ],
+        "tableDynamicData": true,
+        "tableList": [],
+        "tableShowSelection": true,
+        "tableShowOperation": true,
+        "tableOperationWith": 160,
+        "tableShowView": true,
+        "tableBtnView": "查看",
+        "tableShowEdit": true,
+        "tableBtnEdit": "修改",
+        "tableShowDel": true,
+        "tableBtnDel": "删除",
+        "tableOperation": [],
+        "editRouteName": "genericPage-universalOperate",
+        "viewRouteName": "genericPage-universalOperate",
+        "extendsObj": {}
+    },
+    "formData": {
+        "formFields": [
+            {
+                "fields":[
+                { "field": "channelId", "label": "栏目ID", "isRequired": "0", "htmlType": "input", "dictType": "" },
+                { "field": "xzqhId", "label": "行政区划编号", "isRequired": "0", "htmlType": "input", "dictType": "" },
+                { "field": "appId", "label": "应用ID", "isRequired": "0", "htmlType": "input", "dictType": "" },
+                { "field": "siteId", "label": "站点ID", "isRequired": "0", "htmlType": "input", "dictType": "" },
+                { "field": "modelId", "label": "内容模型ID", "isRequired": "0", "htmlType": "input", "dictType": "" },
+                { "field": "entId", "label": "企业会员信息ID", "isRequired": "0", "htmlType": "input", "dictType": "" },
+                { "field": "title", "label": "标题", "isRequired": "0", "htmlType": "input", "dictType": "" },
+                { "field": "author", "label": "作者", "isRequired": "0", "htmlType": "input", "dictType": "" },
+                { "field": "code", "label": "编码", "isRequired": "0", "htmlType": "input", "dictType": "" },
+                { "field": "source", "label": "来源", "isRequired": "0", "htmlType": "input", "dictType": "" },
+                { "field": "sourceUrl", "label": "来源链接", "isRequired": "0", "htmlType": "input", "dictType": "" },
+                { "field": "abstractInfo", "label": "摘要", "isRequired": "0", "htmlType": "textarea", "dictType": "" },
+                { "field": "publishTime", "label": "发布时间", "isRequired": "0", "htmlType": "datetime", "dictType": "" },
+                { "field": "isOnline", "label": "是否线上", "isRequired": "0", "htmlType": "input", "dictType": "" },
+                { "field": "address", "label": "线上会议地址", "isRequired": "0", "htmlType": "input", "dictType": "" },
+                { "field": "docPath", "label": "文库路径", "isRequired": "0", "htmlType": "input", "dictType": "" },
+                { "field": "docType", "label": "文库类型", "isRequired": "0", "htmlType": "select", "dictType": "sys_common_status" },
+                { "field": "dutyDepttypeId", "label": "责任行业条线ID", "isRequired": "0", "htmlType": "input", "dictType": "" },
+                { "field": "dutyOrganId", "label": "管理责任机构ID", "isRequired": "0", "htmlType": "input", "dictType": "" },
+                { "field": "dutyUserId", "label": "责任人ID", "isRequired": "0", "htmlType": "input", "dictType": "" },
+                { "field": "dutyAreaId", "label": "责任地域ID或责任地域CODE", "isRequired": "0", "htmlType": "input", "dictType": "" },
+                { "field": "dutyAreaLevel", "label": "责任地域层级", "isRequired": "0", "htmlType": "input", "dictType": "" },
+                { "field": "txt", "label": "内容", "isRequired": "0", "htmlType": "textarea", "dictType": "" },
+                { "field": "txt1", "label": "扩展内容1", "isRequired": "0", "htmlType": "textarea", "dictType": "" },
+                { "field": "tplContent", "label": "指定模板", "isRequired": "0", "htmlType": "editor", "dictType": "" },
+                { "field": "imagePath", "label": "图片路径", "isRequired": "0", "htmlType": "input", "dictType": "" },
+                { "field": "isImportant", "label": "是否重要0否1是", "isRequired": "0", "htmlType": "input", "dictType": "" },
+                { "field": "keywords", "label": "关键词", "isRequired": "0", "htmlType": "input", "dictType": "" },
+                { "field": "priority", "label": "排序码", "isRequired": "0", "htmlType": "input", "dictType": "" },
+                { "field": "pubRange", "label": "发布范围", "isRequired": "0", "htmlType": "input", "dictType": "" },
+                { "field": "status", "label": "状态", "isRequired": "0", "htmlType": "select", "dictType": "sys_show_hide" },
+                { "field": "delFlag", "label": "删除标记", "isRequired": "0", "htmlType": "input", "dictType": "" },
+                { "field": "description", "label": "说明", "isRequired": "0", "htmlType": "input", "dictType": "" },
+                ],
+                "getOptionsApi": "/api/system/dictionary/type/{}",
+                "getOptionsParams": {},
+                "placeholder": "",
+                "setOptionsBind": {
+                    "label": "label",
+                    "value": "value"
+                },
+                "elementName": "el-default",
+                "extends": {
+                    "optValue": ""
+                }
+            }
+        ],
+        "formApi": {
+            "saveApiUrl": "/api/diaodu/info/save",
+            "saveApiParams": {},
+            "updateApiUrl": "/api/diaodu/info/update",
+            "updateApiParams": {},
+            "detailApiUrl": "/api/diaodu/info",
+            "detailApiParams": {}
+        }
+    }
+}
