@@ -1,6 +1,6 @@
 # EFRAME — 企业级全栈支撑框架 (linlan-eframe)
 
-> Java 17 + Spring Boot 3.5.8 企业级后端框架 + Vue3 管理前端，内置机构、管理员、角色、权限、分组、消息、代码生成与定时任务能力。
+> Java 17 + Spring Boot 3.5.16 企业级后端框架 + Vue3 管理前端，内置机构、管理员、角色、权限、分组、消息、代码生成与定时任务能力。
 
 Key capabilities:
 - 管理员 / 机构 / 角色 / 岗位 / 分组 / 消息管理
@@ -11,7 +11,7 @@ Key capabilities:
 - Smart-doc 接口文档生成
 - ai-pilot AI 开发助手模板与 workflow
 
-Tech stack: Java 17, Spring Boot 3.5.8, Spring Framework 6.2.14, Spring Security 6.5.7, MyBatis 3.5.19, Druid, Quartz, Maven
+Tech stack: Java 17, Spring Boot 3.5.16, Spring Framework 6.2.14, Spring Security 6.5.7, MyBatis 3.5.19, Druid, Quartz, Maven
 Frontend stack: Vue 3.2, Element Plus 2.9, Ant Design Vue 3, Pinia, Vue Router 4, Vite 2.7
 Version: backend 1.2.2, frontend 1.2.0
 Repository: https://gitee.com/linlannet/linlan-eframe

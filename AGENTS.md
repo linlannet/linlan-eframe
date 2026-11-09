@@ -1,7 +1,7 @@
 # AGENTS.md — linlan-eframe
 
 ## Project
-EFRAME 企业级全栈支撑框架：Java 17 + Spring Boot 3.5.8 后端（Maven 多模块）+ Vue3 管理前端。后端版本 1.2.2，前端版本 1.2.0。
+EFRAME 企业级全栈支撑框架：Java 17 + Spring Boot 3.5.16 后端（Maven 多模块）+ Vue3 管理前端。后端版本 1.2.2，前端版本 1.2.0。
 
 ## Layout
 - `backend/` Maven 父 POM 与 10 个子模块
