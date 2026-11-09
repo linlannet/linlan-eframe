@@ -57,4 +57,69 @@ public class DesensitizedUtil {
         }
         return carLicense;
     }
+
+    /**
+     * 姓名脱敏，第2位星号替换，比如：张*三丰
+     *
+     * @param username 姓名
+     * @return 脱敏后的姓名
+     */
+    public static String username(String username) {
+        if (StringUtils.isBlank(username)) {
+            return StringUtils.EMPTY;
+        }
+        return username.replaceAll("(\\S)\\S(\\S*)", "$1*$2");
+    }
+
+    /**
+     * 身份证脱敏，中间10位星号替换，比如：1101** **** ****1234
+     *
+     * @param idCard 身份证号
+     * @return 脱敏后的身份证号
+     */
+    public static String idCard(String idCard) {
+        if (StringUtils.isBlank(idCard)) {
+            return StringUtils.EMPTY;
+        }
+        return idCard.replaceAll("(\\d{4})\\d{10}(\\d{3}[Xx]|\\d{4})", "$1** **** ****$2");
+    }
+
+    /**
+     * 手机号脱敏，中间4位星号替换，比如：138****8888
+     *
+     * @param phone 手机号
+     * @return 脱敏后的手机号
+     */
+    public static String phone(String phone) {
+        if (StringUtils.isBlank(phone)) {
+            return StringUtils.EMPTY;
+        }
+        return phone.replaceAll("(\\d{3})\\d{4}(\\d{4})", "$1****$2");
+    }
+
+    /**
+     * 电子邮箱脱敏，仅显示第一个字母和@后面的地址，其他星号替换，比如：a****@linlan.net
+     *
+     * @param email 电子邮箱
+     * @return 脱敏后的电子邮箱
+     */
+    public static String email(String email) {
+        if (StringUtils.isBlank(email)) {
+            return StringUtils.EMPTY;
+        }
+        return email.replaceAll("(^.)[^@]*(@.*$)", "$1****$2");
+    }
+
+    /**
+     * 银行卡号脱敏，保留最后3位，其他星号替换，比如：**** **** **** **** 234
+     *
+     * @param bankCard 银行卡号
+     * @return 脱敏后的银行卡号
+     */
+    public static String bankCard(String bankCard) {
+        if (StringUtils.isBlank(bankCard)) {
+            return StringUtils.EMPTY;
+        }
+        return bankCard.replaceAll("\\d{15}(\\d{3})", "**** **** **** **** $1");
+    }
 }

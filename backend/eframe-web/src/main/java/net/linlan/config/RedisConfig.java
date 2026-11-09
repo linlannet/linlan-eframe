@@ -31,7 +31,6 @@ import org.springframework.boot.autoconfigure.data.redis.RedisProperties;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.cache.Cache;
 import org.springframework.cache.CacheManager;
-import org.springframework.cache.annotation.CachingConfigurerSupport;
 import org.springframework.cache.annotation.EnableCaching;
 import org.springframework.cache.interceptor.CacheErrorHandler;
 import org.springframework.cache.interceptor.KeyGenerator;
@@ -64,7 +63,7 @@ import static com.alibaba.fastjson2.JSONWriter.Feature.WriteClassName;
 @EnableCaching
 @ConditionalOnClass(RedisOperations.class)
 @EnableConfigurationProperties(RedisProperties.class)
-public class RedisConfig extends CachingConfigurerSupport {
+public class RedisConfig {
 
     @Value("${platform.cache.prefix:eframe}")
     private String prefix;
@@ -72,12 +71,13 @@ public class RedisConfig extends CachingConfigurerSupport {
     @Bean
     public CacheManager cacheManager(RedisConnectionFactory redisConnectionFactory) {
         //序列化
-        RedisSerializer<String> redisSerializer = new StringRedisSerializer(String.class, prefix);
-        FastJsonRedisSerializer fastJsonRedisSerializer = new FastJsonRedisSerializer<>(
+        RedisSerializer<String> redisSerializer = new StringRedisSerializer<String>(String.class,
+            prefix);
+        FastJsonRedisSerializer<Object> fastJsonRedisSerializer = new FastJsonRedisSerializer<>(
             Object.class);
         //redis缓存配置
         RedisCacheConfiguration redisCacheConfiguration = RedisCacheConfiguration
-            .defaultCacheConfig()
+            .defaultCacheConfig(getClass().getClassLoader())
             // 默认redis cache 缓存时间1天
             .entryTtl(Duration.ofDays(1))
             .serializeKeysWith(
@@ -99,7 +99,8 @@ public class RedisConfig extends CachingConfigurerSupport {
     public RedisCacheConfiguration redisCacheConfiguration() {
         FastJsonRedisSerializer<Object> fastJsonRedisSerializer = new FastJsonRedisSerializer<>(
             Object.class);
-        RedisCacheConfiguration configuration = RedisCacheConfiguration.defaultCacheConfig();
+        RedisCacheConfiguration configuration = RedisCacheConfiguration
+            .defaultCacheConfig(getClass().getClassLoader());
         configuration = configuration
             .serializeValuesWith(
                 RedisSerializationContext.SerializationPair.fromSerializer(fastJsonRedisSerializer))
@@ -123,8 +124,8 @@ public class RedisConfig extends CachingConfigurerSupport {
         // 建议使用这种方式，小范围指定白名单
         // ParserConfig.getGlobalInstance().addAccept("net.linlan.*.entity");
         // key的序列化采用StringRedisSerializer
-        template.setKeySerializer(new StringRedisSerializer(String.class, prefix));
-        template.setHashKeySerializer(new StringRedisSerializer(String.class, prefix));
+        template.setKeySerializer(new StringRedisSerializer<String>(String.class, prefix));
+        template.setHashKeySerializer(new StringRedisSerializer<String>(String.class, prefix));
         template.setConnectionFactory(redisConnectionFactory);
         return template;
     }
@@ -133,7 +134,6 @@ public class RedisConfig extends CachingConfigurerSupport {
      * 自定义缓存key生成策略，默认将使用该策略
      */
     @Bean
-    @Override
     public KeyGenerator keyGenerator() {
         return (target, method, params) -> {
             Map<String, Object> container = new HashMap<>(3);
@@ -156,7 +156,6 @@ public class RedisConfig extends CachingConfigurerSupport {
     }
 
     @Bean
-    @Override
     public CacheErrorHandler errorHandler() {
         // 异常处理，当Redis发生异常时，打印日志，但是程序正常走
         log.info("初始化 -> [{}]", "Redis CacheErrorHandler");
@@ -248,6 +247,7 @@ class StringRedisSerializer<T> implements RedisSerializer<T> {
     }
 
     @Override
+    @SuppressWarnings("unchecked")
     public T deserialize(byte[] bytes) {
         String key = (bytes == null ? null : new String(bytes, charset));
         int indexOf = key.indexOf(prefix);

@@ -336,23 +336,23 @@
                 </configuration>
             </plugin>
 
-            <!-- 由于如下启用造成deploy上传文件较大，暂时注释。生成独立运行jar包，放开如下的注释即可
+            <!-- 生成可独立运行的 exec 包（classifier=exec），attach=false 表示不随 deploy 上传到中央库 -->
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
-                <version>${spring.boot.version}</version>
-                <configuration>
-                    <includeSystemScope>true</includeSystemScope>
-                    <mainClass>net.linlan.FrameApplication</mainClass>
-                </configuration>
                 <executions>
                     <execution>
                         <goals>
                             <goal>repackage</goal>
                         </goals>
+                        <configuration>
+                            <classifier>exec</classifier>
+                            <attach>false</attach>
+                            <mainClass>net.linlan.FrameApplication</mainClass>
+                        </configuration>
                     </execution>
                 </executions>
-            </plugin>-->
+            </plugin>
 
             <!-- 为自动生成接口文档进行扩展 -->
             <plugin>

@@ -17,12 +17,12 @@
  */
 package net.linlan.stage.api;
 
+import java.util.HashMap;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import jakarta.servlet.http.HttpServletRequest;
@@ -48,17 +48,21 @@ public class ApiStatusMonitorController {
     private String activeMode;
 
     /** 每次发版前，将版本号进行调整，以明确当前发布的版本和启动的版本是一致的
-     * @param params    查询参数
+     * @param query    查询参数
      * @return  查询结果
      */
     @AuthIgnore
     @GetMapping("getStatus")
-    public ResponseEntity<Map<String, Object>> getStatus(@RequestParam Map<String, Object> params) {
+    public ResponseEntity<Map<String, Object>> getStatus(ApiStatusMonitorQuery query) {
         HttpServletRequest request = HttpContextUtils.getHttpServletRequest();
         String url = request.getRequestURL().toString();
         url = KernelAdminUtils.getDomainMore(url);
+        Map<String, Object> params = new HashMap<>();
+        request.getParameterMap().forEach((k, v) -> params.put(k, v.length == 1 ? v[0] : v));
+        query.setParams(params);
         Map<String, Object> map = new StringMap().put(Constants.FIELD_VERSION, "1.1.X")
-            .put("activeMode", activeMode).put("url", url).put(Constants.REQUEST_PARAMS, params)
+            .put("activeMode", activeMode).put("url", url)
+            .put(Constants.REQUEST_PARAMS, query.getParams())
             .put("timestamp", System.currentTimeMillis()).map();
         return ResponseEntity.ok(map);
     }
