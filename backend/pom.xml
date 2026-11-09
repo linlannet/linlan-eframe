@@ -548,7 +548,7 @@
                     </execution>
                 </executions>
                 <configuration>
-                    <keyname>0EC989C27692C7D4</keyname>
+                    <keyname>linlannet</keyname>
                     <!-- 可选配置项 -->
                     <gpgArguments>
                         <arg>--pinentry-mode</arg>
