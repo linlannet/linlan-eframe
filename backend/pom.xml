@@ -47,16 +47,16 @@
         <maven.tree.version>3.1.0</maven.tree.version>
         <maven.gpg.version>3.2.8</maven.gpg.version>
         <maven.sonatype.version>0.10.0</maven.sonatype.version>
-        <spring.boot.version>3.5.8</spring.boot.version>
-        <spring-framework.version>6.2.14</spring-framework.version>
-        <spring.security.version>6.5.7</spring.security.version>
+        <spring.boot.version>3.5.16</spring.boot.version>
+        <spring-framework.version>6.2.19</spring-framework.version>
+        <spring.security.version>6.5.11</spring.security.version>
         <spring.data.version>3.5.6</spring.data.version>
         <mybatis.version>3.5.19</mybatis.version>
         <commons.codec.version>1.11</commons.codec.version>
         <commons.collections.version>3.2.1</commons.collections.version>
         <zxing.version>3.4.1</zxing.version>
         <httpcomponents.version>4.5.13</httpcomponents.version>
-        <mybatis.spring.version>3.0.4</mybatis.spring.version>
+        <mybatis.spring.version>3.0.5</mybatis.spring.version>
         <druid.version>1.2.23</druid.version>
         <quartz.version>2.3.2</quartz.version>
         <commons-pool2.version>2.12.0</commons-pool2.version>
@@ -216,7 +216,7 @@
             <dependency>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-dependencies</artifactId>
-                <version>${mybatis.spring.version}</version>
+                <version>${spring.boot.version}</version>
             </dependency>
             <dependency>
                 <groupId>org.springframework.boot</groupId>
