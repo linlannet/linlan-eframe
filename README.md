@@ -8,7 +8,7 @@
 
 [![License](https://img.shields.io/badge/license-Apache%202-green.svg)](https://www.apache.org/licenses/LICENSE-2.0)
 ![java version](https://img.shields.io/badge/JAVA-17-green.svg)
-![spring boot](https://img.shields.io/badge/Spring%20Boot-3.5.8-brightgreen.svg)
+![spring boot](https://img.shields.io/badge/Spring%20Boot-3.5.16-brightgreen.svg)
 ![gitee star](https://gitee.com/linlannet/linlan-eframe/badge/star.svg)
 
 ## 介绍
@@ -48,7 +48,7 @@ JAVA 企业级后端框架（EFRAME），基于 Spring Boot，采用支持 JAVA 
 
 | 目录 | 说明 | 技术栈 |
 | ---- | ---- | ---- |
-| [backend](./backend) | 企业级后端框架，Maven 多模块 | Java 17 + Spring Boot 3.5.8 + Spring Framework 6.2.14 + Spring Security 6.5.7 + MyBatis 3.5.19 + Druid + PageHelper + Quartz |
+| [backend](./backend) | 企业级后端框架，Maven 多模块 | Java 17 + Spring Boot 3.5.16 + Spring Framework 6.2.14 + Spring Security 6.5.7 + MyBatis 3.5.19 + Druid + PageHelper + Quartz |
 | [frontend](./frontend) | 管理前端工程 | Vue 3.2 + Element Plus 2.9 + Ant Design Vue 3 + Pinia + Vue Router 4 + Vite 2.7 |
 | [ai-pilot](./ai-pilot) | 麟览 AI 开发助手参考资料包 | Markdown 模板 + 快捷指令 workflow |
 | [docs](./docs) | Smart-doc 生成的接口文档（HTML / OpenAPI） | smart-doc |

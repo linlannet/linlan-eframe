@@ -8,7 +8,7 @@
 
 [![License](https://img.shields.io/badge/license-Apache%202-green.svg)](https://www.apache.org/licenses/LICENSE-2.0)
 ![java version](https://img.shields.io/badge/JAVA-17-green.svg)
-![spring boot](https://img.shields.io/badge/Spring%20Boot-3.5.8-brightgreen.svg)
+![spring boot](https://img.shields.io/badge/Spring%20Boot-3.5.16-brightgreen.svg)
 ![gitee star](https://gitee.com/linlannet/linlan-eframe/badge/star.svg)
 
 ## Introduction
@@ -48,7 +48,7 @@ All changes are recorded in [CHANGELOG](./CHANGELOG.md). This README keeps only 
 
 | Directory | Description | Stack |
 | ---- | ---- | ---- |
-| [backend](./backend) | Enterprise back end, Maven multi-module | Java 17 + Spring Boot 3.5.8 + Spring Framework 6.2.14 + Spring Security 6.5.7 + MyBatis 3.5.19 + Druid + PageHelper + Quartz |
+| [backend](./backend) | Enterprise back end, Maven multi-module | Java 17 + Spring Boot 3.5.16 + Spring Framework 6.2.14 + Spring Security 6.5.7 + MyBatis 3.5.19 + Druid + PageHelper + Quartz |
 | [frontend](./frontend) | Management front end | Vue 3.2 + Element Plus 2.9 + Ant Design Vue 3 + Pinia + Vue Router 4 + Vite 2.7 |
 | [ai-pilot](./ai-pilot) | LINLAN AI development assistant toolkit | Markdown templates + workflows |
 | [docs](./docs) | Smart-doc generated API docs (HTML / OpenAPI) | smart-doc |
